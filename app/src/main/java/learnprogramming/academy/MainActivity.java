@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
         Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
         Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+        Button buttonClear = (Button) findViewById(R.id.buttonClear);
+        buttonClear.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText("");
+                newNumber.setText("");
+            }
+        }));
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
         buttonNeg.setOnClickListener(new View.OnClickListener() {
@@ -141,9 +149,9 @@ public class MainActivity extends AppCompatActivity {
         if (null == operand1) {
             operand1 = value;
         } else {
-            if (pendingOperation.equals("=")) {
-                pendingOperation = operation;
-            }
+//            if (pendingOperation.equals("=")) {
+//                pendingOperation = operation;
+//            }
             switch (pendingOperation) {
                 case "=":
                     operand1 = value;
